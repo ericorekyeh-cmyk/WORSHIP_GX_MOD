@@ -1,0 +1,90 @@
+:root {
+  --gx-accent: #ff7de2;
+  --gx-base: #090b14;
+  --gx-secondary: #16182d;
+  --gx-surface: rgba(22, 24, 45, 0.8);
+  --gx-text: #eef7ff;
+}
+
+html,
+body {
+  background: radial-gradient(circle at top, rgba(134, 92, 255, 0.24), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 125, 226, 0.17), transparent 28%),
+    linear-gradient(135deg, #070910 0%, #101827 40%, #17172d 100%) !important;
+}
+
+body * {
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.gx-music-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 22px;
+  z-index: 2147483647;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border: 1px solid rgba(160, 136, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(9, 11, 20, 0.82);
+  box-shadow: 0 18px 42px rgba(160, 136, 255, 0.18);
+  backdrop-filter: blur(10px);
+  color: var(--gx-text);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.gx-music-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 46px rgba(160, 136, 255, 0.24);
+}
+
+.gx-music-toggle.is-on {
+  border-color: rgba(117, 245, 214, 0.8);
+  box-shadow: 0 18px 44px rgba(117, 245, 214, 0.2);
+}
+
+.gx-eq {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 20px;
+}
+
+.gx-eq span {
+  display: block;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #c7d2ff 0%, #ff7de2 100%);
+  transform-origin: bottom center;
+  animation: gxPulse 0.9s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+.gx-music-toggle.is-on .gx-eq span {
+  animation-play-state: running;
+}
+
+.gx-eq span:nth-child(1) { height: 9px; animation-delay: 0.04s; }
+.gx-eq span:nth-child(2) { height: 16px; animation-delay: 0.12s; }
+.gx-eq span:nth-child(3) { height: 12px; animation-delay: 0.24s; }
+.gx-eq span:nth-child(4) { height: 18px; animation-delay: 0.36s; }
+.gx-eq span:nth-child(5) { height: 10px; animation-delay: 0.48s; }
+
+@keyframes gxPulse {
+  from {
+    transform: scaleY(0.5);
+    opacity: 0.7;
+  }
+  to {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+}

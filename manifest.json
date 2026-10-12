@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "name": "Worship GX Music Mod",
+  "version": "1.0.0",
+  "description": "A dark neon Opera GX mod with ambient synth music and moody styling.",
+  "author": "Worship GX",
+  "license": "MIT",
+  "icons": {
+    "512": "1102902.jpg"
+  },
+  "mod": {
+    "schema_version": 1,
+    "payload": {
+      "theme": {
+        "dark": {
+          "gx_accent": "#ff5ea8",
+          "gx_secondary_base": "#120d1a",
+          "gx_base": "#070b12"
+        },
+        "light": {
+          "gx_accent": "#ff5ea8",
+          "gx_secondary_base": "#efe7ff",
+          "gx_base": "#faf7ff"
+        }
+      },
+      "css": ["theme.css"],
+      "scripts": ["music.js"]
+    }
+  }
+}
